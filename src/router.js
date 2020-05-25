@@ -18,7 +18,7 @@ const router = new Router({
       name: 'home',
       component: Home,
       meta: {
-        isPublic: true
+        isPublic: false
       }
     },
     {

@@ -1,6 +1,7 @@
 module.exports = {
   devServer: {
-    port: 5002
+    port: 5002,
+    host: '0.0.0.0'
   },
   pages: {
     app: {
