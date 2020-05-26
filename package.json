@@ -9,6 +9,7 @@
     "uselocaldep": "cp ../vuex-oidc/dist/vuex-oidc.esm.js ./node_modules/vuex-oidc/dist/vuex-oidc.esm.js"
   },
   "dependencies": {
+    "babel-eslint": "^10.1.0",
     "oidc-client": "^1.9.1",
     "vue": "^2.5.17",
     "vue-router": "^3.0.1",

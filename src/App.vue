@@ -7,7 +7,7 @@
       <router-link to="/">Home</router-link> |
       <router-link to="/protected">Protected</router-link> |
       <a v-if="oidcIsAuthenticated" href @click.prevent="signOut">Sign out</a>
-      <a v-else href @click.prevent="authenticateOidcPopup">Sign in</a>
+      <a v-else href @click.prevent="authenticateOidc">Sign in</a>
     </div>
     <router-view/>
   </div>
@@ -28,7 +28,7 @@ export default {
   },
   methods: {
     ...mapActions('oidcStore', [
-      'authenticateOidcPopup',
+      'authenticateOidc',
       'removeOidcUser'
     ]),
     userLoaded: function (e) {

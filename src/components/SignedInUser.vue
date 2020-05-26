@@ -18,6 +18,12 @@
       <button @click="authenticateOidcSilent">Reauthenticate silently</button>
     </p>
 
+    <p>
+      {{oidcAccessToken}}
+    </p>
+
+    <apiData />
+
   </div>
   <p v-else-if="oidcAuthenticationIsChecked">You are not signed in</p>
   <p v-else>Silent renew is in progress...</p>
@@ -26,15 +32,20 @@
 <script>
 import { mapGetters, mapActions } from 'vuex'
 import jsonMarkup from 'json-markup'
+import apiData from './ApiData'
 
 export default {
   name: 'SignedInUser',
+  components:{
+    apiData
+  },
   computed: {
     ...mapGetters('oidcStore', [
       'oidcIsAuthenticated',
       'oidcAuthenticationIsChecked',
       'oidcUser',
       'oidcIdToken',
+      'oidcAccessToken',
       'oidcIdTokenExp'
     ]),
     userDisplay: function () {
